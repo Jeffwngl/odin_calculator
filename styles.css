@@ -1,0 +1,180 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", Helvetica, sans-serif;
+    background-color: rgb(229, 219, 231);
+}
+
+.calculator {
+    align-items: center;
+    margin-top: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    background-color: rgb(246, 246, 246);
+    box-shadow: 
+    rgba(45, 35, 66, 0.2) 0 2px 4px,
+    rgba(45, 35, 66, 0.15) 0 7px 13px -3px;
+}
+
+#display {
+    margin-top: 25px;
+    font-size: large;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 350px;
+    height: 70px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: inset 0 4px rgba(45, 35, 66, 0.2);
+    border: solid 1px #d9d9d9;
+}
+
+.btn {
+    font-family: "Poppins", Helvetica;
+    padding: 10px 15px 10px 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    border: solid 2px #dedede;
+    cursor: pointer;
+    color: rgb(96, 90, 95);
+    font-weight: 600;
+    font-size: large;
+    transition:
+    box-shadow 0.1s;
+    will-change: box-shadow, background-color;
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: inset rgb(180, 125, 169) 0px 2px 7px;
+    background-color: #f1f1f1;
+}
+
+.calculator .buttons {
+    display: flex;
+    box-sizing: border-box;
+    width: 350px;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.buttons .numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.numbers .btn {
+    box-shadow:
+    rgba(45, 35, 66, 0.2) 0 2px 4px,
+    rgba(45, 35, 66, 0.15) 0 7px 13px -3px;
+}
+
+.buttons .operations {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 40%;
+}
+
+.operations .btn {
+    /* background-color: #f72585; */
+    box-shadow:
+    rgba(45, 35, 66, 0.2) 0 2px 4px,
+    rgba(45, 35, 66, 0.15) 0 7px 13px -3px;
+}
+
+/* equals button */
+
+#output {
+    margin-top: 20px;
+    display: inline-flex;
+    width: 350px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.02s;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(37, 37, 37);
+    background-color: #ffffff;
+    z-index: 0;
+    box-shadow:
+    rgba(45, 35, 66, 0.2) 0 2px 4px,
+    rgba(45, 35, 66, 0.15) 0 7px 13px -3px;
+    transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+    will-change: 
+    transform,
+    box-shadow;
+}
+
+#output:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
+  }
+
+#output:active {
+    transform: scale(0.97);
+    box-shadow: inset 0 3px 7px #888888;
+  }
+
+.hover {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+.hover div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(
+      90deg,
+      rgba(222, 0, 75, 1) 0%,
+      rgba(191, 70, 255, 1) 49%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    border-radius: 40rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+}
+
+#output:hover .hover div {
+    width: 8rem;
+    height: 8rem;
+}
+
+@keyframes effect {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+/* end of equals */
+
+.footer {
+    padding: 10px;
+    font-size: small;
+}
