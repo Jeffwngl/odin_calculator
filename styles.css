@@ -96,12 +96,10 @@ body {
     margin-top: 20px;
     display: inline-flex;
     width: 350px;
+    border: solid 2px #dedede;
     align-items: center;
     justify-content: center;
     padding: 15px 30px;
-    border: 0;
-    position: relative;
-    overflow: hidden;
     border-radius: 10px;
     transition: all 0.02s;
     font-weight: bold;
@@ -112,65 +110,14 @@ body {
     box-shadow:
     rgba(45, 35, 66, 0.2) 0 2px 4px,
     rgba(45, 35, 66, 0.15) 0 7px 13px -3px;
-    transition:
-    transform 0.15s,
-    box-shadow 0.15s;
     will-change: 
     transform,
     box-shadow;
 }
 
-#output:hover {
-    background: rgb(193, 228, 248);
-    color: rgb(33, 0, 85);
-  }
-
 #output:active {
-    transform: scale(0.97);
     box-shadow: inset 0 3px 7px #888888;
   }
-
-.hover {
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
-
-.hover div {
-    background: rgb(222, 0, 75);
-    background: linear-gradient(
-      90deg,
-      rgba(222, 0, 75, 1) 0%,
-      rgba(191, 70, 255, 1) 49%,
-      rgba(0, 212, 255, 1) 100%
-    );
-    border-radius: 40rem;
-    transition: 0.4s;
-    filter: blur(20px);
-    animation: effect infinite 3s linear;
-    opacity: 0.5;
-}
-
-#output:hover .hover div {
-    width: 8rem;
-    height: 8rem;
-}
-
-@keyframes effect {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
-}
 
 /* end of equals */
 
